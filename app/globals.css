@@ -1,0 +1,278 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Added smooth scroll behavior globally */
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* New dark theme color palette */
+  --background: #0F0F14;
+  --foreground: #E8D8C3;
+  --card: rgba(193, 18, 31, 0.12);
+  --card-foreground: #FBF6EE;
+  --popover: #0F2A44;
+  --popover-foreground: #FBF6EE;
+  --primary: #36B1C7;
+  --primary-foreground: #0F0F14;
+  --secondary: #1C3D73;
+  --secondary-foreground: #E8D8C3;
+  --muted: #1C3D73;
+  --muted-foreground: #B8A89C;
+  --accent: #D3AF37;
+  --accent-foreground: #0F0F14;
+  --destructive: #C1121F;
+  --destructive-foreground: #FBF6EE;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #36B1C7;
+  --chart-1: #C1121F;
+  --chart-2: #FF2D55;
+  --chart-3: #8A2BE2;
+  --chart-4: #36B1C7;
+  --chart-5: #D3AF37;
+  --radius: 0.75rem;
+  --sidebar: #0F2A44;
+  --sidebar-foreground: #E8D8C3;
+  --sidebar-primary: #36B1C7;
+  --sidebar-primary-foreground: #0F0F14;
+  --sidebar-accent: #1C3D73;
+  --sidebar-accent-foreground: #E8D8C3;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #36B1C7;
+
+  /* Custom palette variables */
+  --color-obsidian: #0F0F14;
+  --color-midnight: #0F2A44;
+  --color-deep-blue: #1C3D73;
+  --color-cherry: #C1121F;
+  --color-magenta: #FF2D55;
+  --color-violet: #8A2BE2;
+  --color-sand: #E8D8C3;
+  --color-cloud: #FBF6EE;
+  --color-cyan: #36B1C7;
+  --color-gold: #D3AF37;
+}
+
+@theme inline {
+  /* Add serif font for headings */
+  --font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Georgia", serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply text-foreground;
+    background: linear-gradient(
+      180deg,
+      #0F0F14 0%,
+      #0F0F14 50%,
+      #0F2A44 75%,
+      #1C3D73 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+/* ============================================
+   HEADING STYLES - Vibrant Cyan-Blue
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+  color: #36B1C7;
+}
+
+/* ============================================
+   LINK STYLES - Gold Tint
+   ============================================ */
+a {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+a:hover {
+  color: #D3AF37 !important;
+}
+
+/* ============================================
+   CARD & BOX GRADIENT STYLES
+   ============================================ */
+.card-gradient {
+  background: linear-gradient(135deg, rgba(193, 18, 31, 0.15), rgba(255, 45, 85, 0.12), rgba(138, 43, 226, 0.15));
+  border: 1px solid rgba(255, 45, 85, 0.2);
+  backdrop-filter: blur(12px);
+}
+
+.card-gradient-solid {
+  background: linear-gradient(135deg, #C1121F, #FF2D55, #8A2BE2);
+}
+
+/* ============================================
+   TYPEWRITER CURSOR
+   ============================================ */
+.typed-cursor {
+  color: #36B1C7;
+  font-weight: 100;
+  opacity: 1;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ============================================
+   LIQUID GLASS BUTTON EFFECT
+   ============================================ */
+.liquid-glass-btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1),
+    0 4px 24px rgba(0, 0, 0, 0.15),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.liquid-glass-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: none;
+  pointer-events: none;
+}
+
+.liquid-glass-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(211, 175, 55, 0.35),
+    transparent
+  );
+  transition: none;
+  pointer-events: none;
+}
+
+.liquid-glass-btn:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(211, 175, 55, 0.15) 0%,
+    rgba(211, 175, 55, 0.08) 50%,
+    rgba(211, 175, 55, 0.15) 100%
+  );
+  border-color: rgba(211, 175, 55, 0.35);
+  box-shadow:
+    inset 0 1px 0 rgba(211, 175, 55, 0.25),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1),
+    0 4px 30px rgba(211, 175, 55, 0.15),
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 0 20px rgba(211, 175, 55, 0.08);
+  transform: translateY(-1px);
+}
+
+.liquid-glass-btn:hover::before {
+  animation: shine-sweep 0.6s ease-out forwards;
+}
+
+.liquid-glass-btn:hover::after {
+  animation: shine-sweep 0.6s ease-out 0.35s forwards;
+}
+
+@keyframes shine-sweep {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+/* Liquid glass internal reflection */
+.liquid-glass-btn .glass-reflection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 100%
+  );
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* ============================================
+   BACKGROUND TEXT OVERLAY - adjust for dark theme
+   ============================================ */
+.bg-text-overlay {
+  color: rgba(255, 255, 255, 0.03);
+}
