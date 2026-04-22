@@ -5,6 +5,7 @@
 4. https://21st.dev/community/components/efferd/dotted-surface/default
 
 
+# Color combo 
 01. Obsidian Black (#0F0F14)-> Midnight Blue (#0F2A44) -> #1C3D73 [Background color combo (50% black rest gradient)]
 02. Cherry Red (#C1121F) -> Hot Megenta (#FF2D55) -> Blue Violet (#8A2BE2) [Boxes & Cards]
 03. Muted Sand (#E8D8C3) -> Cloude White (#FBF6EE)
