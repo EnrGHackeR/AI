@@ -6,7 +6,7 @@ const footerLinks = {
   product: [
     { label: "Search", href: "#" },
     { label: "List", href: "#" },
-    { label: "Pricing", href: "#" },
+    { label: "Pricing", href: "/pricing" },
     { label: "App", href: "#" },
   ],
   company: [
